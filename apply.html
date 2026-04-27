@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>採用応募フォーム | ABC Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" media="screen and (max-width: 767px)" />
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html"><img src="images/ABC_Logo.png" alt="ABC Technologies"></a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">ホーム</a>
+                <a href="company.html">会社情報</a>
+                <a href="recruit.html">採用情報</a>
+                <a href="contact.html">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <h1 class="form-page-title">採用応募フォーム</h1>
+                <p class="form-page-lead">
+                    現在弊社では一緒にはたらいていただける方を探しています。<br>
+                    現在募集中のポジション以外についてのお問い合わせは、恐れ入りますが、<br>
+                    <a href="mailto:recruit@abctech.co.jp" class="form-mail-link">recruit@abctech.co.jp</a> までご連絡ください。
+                </p>
+
+                <!--
+                ========================================
+                  メール送信の設定方法（2択）
+
+                  【方法A: Formspree Pro（有料・簡単）】※天賦は有料プランが必要
+                  1. https://formspree.io でProプランに登録
+                  2. フォームIDを取得
+                  3. action の "YOUR_FORM_ID" を差し替える
+
+                  【方法B: PHP + PHPMailer（無料・サーバー必要）】
+                  1. apply.php を作成しサーバーにアップロード
+                  2. action="apply.php" に変更
+                  3. 送信先: sachioi.portfolio@gmail.com を apply.php 内に設定
+                ========================================
+                -->
+                <!-- 添付ファイル機能はFormspree Proプランで対応。現在は無料プランのため送信できません -->
+                <form class="contact-form" id="applyForm" action="https://formspree.io/f/mnjlyvye" method="POST"
+                    enctype="multipart/form-data">
+                    <input type="hidden" name="_subject" value="【採用応募】お問い合わせ">
+                    <input type="hidden" name="_replyto" value="oi.sachi.lotsangeles@gmail.com">
+
+                    <!-- ご希望のポジション -->
+                    <div class="form-group">
+                        <label class="form-label" for="position">
+                            ご希望のポジション <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-select-wrap">
+                            <select class="form-select" id="position" name="ご希望のポジション" required>
+                                <option value="UI/UXデザイナー">UI/UXデザイナー</option>
+                                <option value="バックエンドエンジニア">バックエンドエンジニア</option>
+                                <option value="経理（マネージャー候補）">経理（マネージャー候補）</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 氏名 -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            氏名 <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-row">
+                            <input class="form-input" type="text" name="姓" required placeholder="姓">
+                            <input class="form-input" type="text" name="名" required placeholder="名">
+                        </div>
+                    </div>
+
+                    <!-- ふりがな -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            ふりがな <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-row">
+                            <input class="form-input" type="text" name="せい" required placeholder="せい">
+                            <input class="form-input" type="text" name="めい" required placeholder="めい">
+                        </div>
+                    </div>
+
+                    <!-- メールアドレス -->
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            メールアドレス <span class="form-required">必須</span>
+                        </label>
+                        <input class="form-input" type="email" id="email" name="メールアドレス" required>
+                    </div>
+
+                    <!-- 携帯番号 -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            携帯番号 <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-tel-row">
+                            <input class="form-input form-input--tel" type="tel" id="tel1" name="携帯番号1" maxlength="4"
+                                required placeholder="090">
+                            <span class="form-tel-sep">-</span>
+                            <input class="form-input form-input--tel" type="tel" id="tel2" name="携帯番号2" maxlength="4"
+                                required placeholder="1234">
+                            <span class="form-tel-sep">-</span>
+                            <input class="form-input form-input--tel" type="tel" id="tel3" name="携帯番号3" maxlength="4"
+                                required placeholder="5678">
+                        </div>
+                    </div>
+
+                    <!-- 郵便番号 -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            郵便番号 <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-zip-row">
+                            <input class="form-input form-input--zip" type="tel" id="zip1" name="郵便番号1" maxlength="3"
+                                required placeholder="160">
+                            <span class="form-tel-sep">-</span>
+                            <input class="form-input form-input--zip" type="tel" id="zip2" name="郵便番号2" maxlength="4"
+                                required placeholder="0023">
+                            <button type="button" class="btn-zip-search" id="zipSearch">住所検索</button>
+                        </div>
+                    </div>
+
+                    <!-- 市区郡番地 -->
+                    <div class="form-group">
+                        <label class="form-label" for="address">
+                            市区郡番地 <span class="form-required">必須</span>
+                        </label>
+                        <input class="form-input" type="text" id="address" name="市区郡番地" required>
+                    </div>
+
+                    <!-- マンション・アパート名 -->
+                    <div class="form-group">
+                        <label class="form-label" for="building">マンション・アパート名</label>
+                        <input class="form-input" type="text" id="building" name="マンション・アパート名">
+                    </div>
+
+                    <!-- 提出書類 -->
+                    <div class="form-group">
+                        <label class="form-label">提出書類</label>
+                        <div class="form-file-list">
+                            <div class="form-file-row">
+                                <span class="form-file-label">履歴書 <span class="form-required">必須</span></span>
+                                <input type="file" name="履歴書" id="resume" accept=".pdf,.doc,.docx" required
+                                    class="form-file-input">
+                                <label for="resume" class="btn-file">ファイルを選択</label>
+                                <span class="form-file-name" id="resumeName">選択されていません</span>
+                                <button type="button" class="btn-file-clear" id="resumeClear" style="display:none"
+                                    aria-label="削除">✕</button>
+                            </div>
+                            <div class="form-file-row">
+                                <span class="form-file-label">職務経歴書 <span class="form-required">必須</span></span>
+                                <input type="file" name="職務経歴書" id="career" accept=".pdf,.doc,.docx" required
+                                    class="form-file-input">
+                                <label for="career" class="btn-file">ファイルを選択</label>
+                                <span class="form-file-name" id="careerName">選択されていません</span>
+                                <button type="button" class="btn-file-clear" id="careerClear" style="display:none"
+                                    aria-label="削除">✕</button>
+                            </div>
+                            <div class="form-file-row">
+                                <span class="form-file-label">ポートフォリオ</span>
+                                <input type="file" name="ポートフォリオ" id="portfolio" accept=".pdf,.zip,.png,.jpg"
+                                    class="form-file-input">
+                                <label for="portfolio" class="btn-file">ファイルを選択</label>
+                                <span class="form-file-name" id="portfolioName">選択されていません</span>
+                                <button type="button" class="btn-file-clear" id="portfolioClear" style="display:none"
+                                    aria-label="削除">✕</button>
+                            </div>
+                            <div class="form-file-row">
+                                <span class="form-file-label">その他</span>
+                                <input type="file" name="その他" id="other" class="form-file-input">
+                                <label for="other" class="btn-file">ファイルを選択</label>
+                                <span class="form-file-name" id="otherName">選択されていません</span>
+                                <button type="button" class="btn-file-clear" id="otherClear" style="display:none"
+                                    aria-label="削除">✕</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ご質問等 -->
+                    <div class="form-group">
+                        <label class="form-label" for="question">ご質問等</label>
+                        <textarea class="form-textarea" id="question" name="ご質問等" rows="8"></textarea>
+                    </div>
+
+                    <!-- 採用のプライバシーポリシー -->
+                    <div class="form-group">
+                        <h2 class="form-privacy-title">採用のプライバシーポリシー</h2>
+                        <div class="form-privacy-box">
+                            <p class="privacy-box-heading"><strong>応募者の個人情報に関する取扱い方針</strong></p>
+                            <p>株式会社ABCテクノロジー（以下、「当社」といいます。）は、応募者の個人情報を、以下の取扱い方針（以下「プライバシーポリシー」）に基づき、当社が定める個人情報の取扱い「プライバシーポリシー」に照らし、適切に管理します。当社に送信いただく前または送付の前に、当社双方の「プライバシーポリシー」をよくお読みになり、これらの内容に了解の上、ご連絡をお願いします。
+                            </p>
+                            <p><strong>第1条（個人情報の利用目的）</strong><br>
+                                ご応募にあたってご提供いただく個人情報は、以下の目的のためにのみ利用致します。<br>
+                                1. 当社選考者の採用<br>
+                                2. 応募者への ご連絡<br>
+                                3. 採用選考に関する業務</p>
+                            <p><strong>第2条（書類・電子データの取扱い）</strong><br>
+                                1. ご応募にあたってご提供いただいた採用書式または採用物の場合であっても返送することはできません。<br>
+                                2. ご応募にあたってご提供いただいた電子データは当社が適切に管理しますが電子データ及び採用書式・添付書類等の最終取扱いも当社に委ねられます。</p>
+                            <p><strong>第3条（適用除外）</strong><br>
+                                当社代人など、ご提供いただける場合もあっても、その内容がこれにあたらない場合は本方針の対象外となります。</p>
+                            <p><strong>第4条（個人情報を提供いただけない場合の取扱い）</strong><br>
+                                ご提供が任意の個人情報をご提供いただけない場合、当社代人への ご審査ができない場合があります。</p>
+                            <p><strong>第5条（お問い合わせ）</strong><br>
+                                ご応募に関するお問い合わせは次の担当部署までご連絡ください。<br>
+                                社名：株式会社ABCテクノロジー<br>
+                                住所：〒160-0023 東京都新宿区西新宿1-1-1<br>
+                                担当部署：人事部<br>
+                                Eメールアドレス：Recruit@ABCtech.co.jp</p>
+                        </div>
+
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" name="採用個人情報同意" required>
+                            <span class="form-required">必須</span>　個人情報の取り扱いに同意する
+                        </label>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <div class="button-wrap">
+                        <button type="submit" class="btn btn-submit btn-submit--orange">送信</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <ul class="footer-nav">
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="service.html">料金一覧</a></li>
+                <li><a href="company.html">会社情報</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+            <div class="footer-sns">
+                <span class="footer-sns-text">公式SNS</span>
+                <a href="https://x.com/sachi_oi" target="_blank" rel="noopener"><img src="images/Footer_X logo.png"
+                        alt="X"></a>
+                <a href="https://www.facebook.com/sachi.oi" target="_blank" rel="noopener"><img
+                        src="images/Footer_Facebook logo.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/in/oisachi/" target="_blank" rel="noopener"><img
+                        src="images/Footer_LinkedIn logo.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ---- 郵便番号 → 住所自動入力（zipcloud API） ---- */
+        document.getElementById('zipSearch').addEventListener('click', function () {
+            const zip = document.getElementById('zip1').value + document.getElementById('zip2').value;
+            if (zip.length < 7) {
+                alert('郵便番号を正しく入力してください（例：160-0023）');
+                return;
+            }
+            fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zip}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (data.results) {
+                        const r = data.results[0];
+                        document.getElementById('address').value =
+                            r.address1 + r.address2 + r.address3;
+                    } else {
+                        alert('住所が見つかりませんでした。郵便番号を確認してください。');
+                    }
+                })
+                .catch(() => alert('住所検索に失敗しました。'));
+        });
+
+        /* ---- ファイル選択・削除 ---- */
+        const fileFields = [
+            { input: 'resume', nameEl: 'resumeName', clearBtn: 'resumeClear' },
+            { input: 'career', nameEl: 'careerName', clearBtn: 'careerClear' },
+            { input: 'portfolio', nameEl: 'portfolioName', clearBtn: 'portfolioClear' },
+            { input: 'other', nameEl: 'otherName', clearBtn: 'otherClear' },
+        ];
+
+        fileFields.forEach(({ input, nameEl, clearBtn }) => {
+            const inputEl = document.getElementById(input);
+            const nameSpan = document.getElementById(nameEl);
+            const clearEl = document.getElementById(clearBtn);
+
+            // ファイル選択時：ファイル名表示・削除ボタン表示
+            inputEl.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    nameSpan.textContent = this.files[0].name;
+                    clearEl.style.display = 'inline-flex';
+                } else {
+                    nameSpan.textContent = '選択されていません';
+                    clearEl.style.display = 'none';
+                }
+            });
+
+            // 削除ボタン：ファイルをリセット
+            clearEl.addEventListener('click', function () {
+                inputEl.value = '';
+                nameSpan.textContent = '選択されていません';
+                clearEl.style.display = 'none';
+            });
+        });
+
+        /* ---- 日本語バリデーションメッセージ ---- */
+        document.getElementById('applyForm').addEventListener('submit', function (e) {
+            const inputs = this.querySelectorAll('[required]');
+            let firstInvalid = null;
+            inputs.forEach(el => {
+                if (!el.validity.valid) {
+                    if (!firstInvalid) firstInvalid = el;
+                    if (el.validity.valueMissing) {
+                        el.setCustomValidity('この項目は必須です。');
+                    }
+                } else {
+                    el.setCustomValidity('');
+                }
+            });
+        });
+
+        // 入力のたびにカスタムメッセージをリセット（再入力時に正しく検証されるよう）
+        document.getElementById('applyForm').querySelectorAll('[required]').forEach(el => {
+            el.addEventListener('input', function () {
+                this.setCustomValidity('');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

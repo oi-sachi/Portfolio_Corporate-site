@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせ | ABC Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" media="screen and (max-width: 767px)" />
+</head>
+
+<body>
+
+    <!-- ヘッダー -->
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="index.html"><img src="images/ABC_Logo.png" alt="ABC Technologies"></a>
+            </div>
+            <nav class="nav">
+                <a href="index.html">ホーム</a>
+                <a href="company.html">会社情報</a>
+                <a href="recruit.html">採用情報</a>
+                <a href="contact.html">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+
+                <!-- ページタイトル（JS で切り替え） -->
+                <h1 class="form-page-title" id="formTitle">資料請求フォーム</h1>
+                <p class="form-page-lead" id="formLead">資料請求はこちらからお申し込みください。<br>無料相談・お見積もりも無料で承っております。お気軽にお問い合わせください。
+                </p>
+
+                <!--
+                ========================================
+                  メール送信の設定方法（2択）
+
+                  【方法A: Formspree（無料）】　※50件まで無料
+                  1. https://formspree.io で無料プランに登録
+                  2. フォームIDを取得
+                  3. action の "YOUR_FORM_ID" を差し替える
+
+                  【方法B: PHP + PHPMailer（無料・サーバー必要）】
+                  1. apply.php を作成しサーバーにアップロード
+                  2. action="apply.php" に変更
+                  3. 送信先: oi.sachi.lotsangeles@gmail.com を apply.php 内に設定
+                ========================================
+                -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnjlyvye" method="POST">
+                    <!-- Formspree へのメール転送先（hidden） -->
+                    <input type="hidden" name="_replyto" value="sachioi.portfolio@gmail.com">
+                    <input type="hidden" name="_subject" id="mailSubject" value="【資料請求】お問い合わせ">
+
+                    <!-- 問い合わせ内容 -->
+                    <div class="form-group">
+                        <label class="form-label" for="inquiryType">
+                            問い合わせ内容 <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-select-wrap">
+                            <select class="form-select" id="inquiryType" name="問い合わせ内容" required>
+                                <option value="資料請求">資料請求</option>
+                                <option value="無料相談">無料相談</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 企業名 -->
+                    <div class="form-group">
+                        <label class="form-label" for="company">
+                            企業名 <span class="form-required">必須</span>
+                        </label>
+                        <input class="form-input" type="text" id="company" name="企業名" required placeholder="">
+                    </div>
+
+                    <!-- 氏名 -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            氏名 <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-row">
+                            <input class="form-input" type="text" name="姓" required placeholder="姓">
+                            <input class="form-input" type="text" name="名" required placeholder="名">
+                        </div>
+                    </div>
+
+                    <!-- ふりがな -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            ふりがな <span class="form-required">必須</span>
+                        </label>
+                        <div class="form-row">
+                            <input class="form-input" type="text" name="せい" required placeholder="せい">
+                            <input class="form-input" type="text" name="めい" required placeholder="めい">
+                        </div>
+                    </div>
+
+                    <!-- メールアドレス -->
+                    <div class="form-group">
+                        <label class="form-label" for="email">
+                            メールアドレス <span class="form-required">必須</span>
+                        </label>
+                        <input class="form-input form-input--half" type="email" id="email" name="メールアドレス" required>
+                    </div>
+
+                    <!-- ご相談内容（無料相談のみ表示） -->
+                    <div class="form-group" id="consultSection" style="display: none;">
+                        <label class="form-label">ご相談内容</label>
+                        <p class="form-note">無料相談の方は、業務改善システム、在庫管理システム、属人化防止システムの中から選んで打ち込んでください。</p>
+                        <input class="form-input" type="text" name="ご相談内容">
+                    </div>
+
+                    <!-- ご相談内容詳細（無料相談のみ表示） -->
+                    <div class="form-group" id="consultDetailSection" style="display: none;">
+                        <label class="form-label" for="consultDetail">ご相談内容詳細</label>
+                        <textarea class="form-textarea" id="consultDetail" name="ご相談内容詳細" rows="8"></textarea>
+                    </div>
+
+                    <!-- プライバシーポリシー同意書 -->
+                    <div class="form-group">
+                        <h2 class="form-privacy-title">プライバシーポリシー同意書</h2>
+                        <div class="form-privacy-box">
+                            <p class="privacy-box-heading"><strong>プライバシーポリシー</strong></p>
+                            <p>株式会社ABCテクノロジー（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
+                            </p>
+                            <p><strong>第1条（個人情報）</strong><br>
+                                「個人情報」とは、個人情報保護法にいう「個人情報」を指すものとし、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報（個人識別情報）を指します。
+                            </p>
+                            <p><strong>第2条（個人情報の収集方法）</strong><br>
+                                当社は、ユーザーが利用登録をする際に氏名、電話番号、メールアドレス、所属企業名などの個人情報をお尋ねすることがあります。また、ユーザーと提携先などとの間でなされたユーザーの個人情報を含む取引記録や決済に関する情報を、当社の提携先（情報提供元、広告主、広告配信先などを含みます。以下、「提携先」といいます。）などから収集することがあります。
+                            </p>
+                            <p><strong>第3条（個人情報を収集・利用する目的）</strong><br>
+                                当社が個人情報を収集・利用する目的は、以下のとおりです。<br>
+                                1. 当社サービスの提供・運営のため<br>
+                                2. ユーザーからのお問い合わせに回答するため（本人確認を行うことを含む）<br>
+                                3. ユーザーが利用中のサービスの新機能、更新情報、キャンペーン等及び当社が提供する他のサービスの案内のメールを送付するため<br>
+                                4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため<br>
+                                5. 利用規約に違反したユーザーや、不正・不当な目的でサービスを利用しようとするユーザーを特定し、ご利用をお断りするため<br>
+                                6. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため<br>
+                                7. 上記の利用目的に付随する目的</p>
+                            <p><strong>第4条（個人情報の第三者提供）</strong><br>
+                                当社は、次に掲げる場合を除いて、あらかじめユーザーの同意を得ることなく、第三者に個人情報を提供することはありません。ただし、個人情報保護法その他の法令で認められる場合を除きます。
+                            </p>
+                            <p><strong>第5条（個人情報の訂正および削除）</strong><br>
+                                ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正等」といいます。）を請求することができます。
+                            </p>
+                            <p><strong>第6条（お問い合わせ窓口）</strong><br>
+                                本ポリシーに関するお問い合わせは、下記の窓口までお願いいたします。<br>
+                                社名：株式会社ABCテクノロジー<br>
+                                住所：〒160-0023 東京都新宿区西新宿1-1-1<br>
+                                担当部署：お問い合わせ窓口<br>
+                                Eメールアドレス：info@ABCtech.co.jp</p>
+                        </div>
+                        <label class="form-checkbox-label">
+                            <input type="checkbox" name="個人情報同意" required>
+                            <span class="form-required">必須</span>　個人情報の取り扱いに同意する
+                        </label>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <div class="button-wrap">
+                        <button type="submit" class="btn btn-submit btn-submit--black" id="submitBtn">送信</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <ul class="footer-nav">
+                <li><a href="privacy.html">プライバシーポリシー</a></li>
+                <li><a href="service.html">料金一覧</a></li>
+                <li><a href="company.html">会社情報</a></li>
+                <li><a href="recruit.html">採用情報</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+            <div class="footer-sns">
+                <span class="footer-sns-text">公式SNS</span>
+                <a href="https://x.com/sachi_oi" target="_blank" rel="noopener"><img src="images/Footer_X logo.png"
+                        alt="X"></a>
+                <a href="https://www.facebook.com/sachi.oi" target="_blank" rel="noopener"><img
+                        src="images/Footer_Facebook logo.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/in/oisachi/" target="_blank" rel="noopener"><img
+                        src="images/Footer_LinkedIn logo.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const inquiryType = document.getElementById('inquiryType');
+        const formTitle = document.getElementById('formTitle');
+        const formLead = document.getElementById('formLead');
+        const mailSubject = document.getElementById('mailSubject');
+        const consultSection = document.getElementById('consultSection');
+        const consultDetailSection = document.getElementById('consultDetailSection');
+        const submitBtn = document.getElementById('submitBtn');
+
+        const contents = {
+            '資料請求': {
+                title: '資料請求フォーム',
+                lead: '資料請求はこちらからお申し込みください。<br>無料相談・お見積もりも無料で承っております。お気軽にお問い合わせください。',
+                subject: '【資料請求】お問い合わせ',
+            },
+            '無料相談': {
+                title: '無料相談申し込みフォーム',
+                lead: '貴社のお悩み・ご要望を伺い、ご予算に応じたシステムをご提案します。<br>ご相談・お見積もりは無料です。どうぞお気軽にご相談ください。',
+                subject: '【無料相談】お問い合わせ',
+            },
+        };
+
+        function updateForm() {
+            const selected = inquiryType.value;
+            const c = contents[selected];
+
+            formTitle.textContent = c.title;
+            formLead.innerHTML = c.lead;
+            mailSubject.value = c.subject;
+
+            const isConsult = selected === '無料相談';
+            consultSection.style.display = isConsult ? '' : 'none';
+            consultDetailSection.style.display = isConsult ? '' : 'none';
+
+            submitBtn.classList.remove('btn-submit--black', 'btn-submit--green');
+            submitBtn.classList.add(isConsult ? 'btn-submit--green' : 'btn-submit--black');
+        }
+
+        inquiryType.addEventListener('change', updateForm);
+
+        // URLパラメータ（?type=資料請求 / ?type=無料相談）で初期選択を切り替え
+        const urlParams = new URLSearchParams(window.location.search);
+        const typeParam = urlParams.get('type');
+        if (typeParam && contents[typeParam]) {
+            inquiryType.value = typeParam;
+        }
+        updateForm(); // 初期表示
+
+        /* ---- 日本語バリデーションメッセージ ---- */
+        document.getElementById('contactForm').addEventListener('submit', function () {
+            this.querySelectorAll('[required]').forEach(el => {
+                if (!el.validity.valid && el.validity.valueMissing) {
+                    el.setCustomValidity('この項目は必須です。');
+                } else {
+                    el.setCustomValidity('');
+                }
+            });
+        });
+
+        document.getElementById('contactForm').querySelectorAll('[required]').forEach(el => {
+            el.addEventListener('input', function () { this.setCustomValidity(''); });
+            el.addEventListener('change', function () { this.setCustomValidity(''); });
+        });
+    </script>
+
+</body>
+
+</html>

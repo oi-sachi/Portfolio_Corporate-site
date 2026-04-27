@@ -1,0 +1,246 @@
+/* =========================
+   レスポンシブ（767px以下）
+========================= */
+
+/* ヘッダー */
+.nav {
+  gap: 16px;
+}
+
+.nav a {
+  font-size: 14px;
+}
+
+.logo img {
+  height: 24px;
+}
+
+/* Hero */
+.hero {
+  min-height: 360px;
+}
+
+.hero-inner {
+  padding: 0 24px;
+}
+
+.hero-inner h1 {
+  font-size: 26px;
+}
+
+/* セクション共通 */
+.section {
+  padding: 52px 0;
+}
+
+.section h2 {
+  font-size: 28px;
+}
+
+/* サービスの紹介 */
+.service-list {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.service-card {
+  flex: unset;
+  width: 100%;
+}
+
+.service-card img {
+  width: 120px;
+  height: 120px;
+}
+
+/* システムの紹介 */
+.system-list {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.system-card {
+  flex: unset;
+  width: 100%;
+}
+
+.system-lead {
+  font-size: 17px;
+}
+
+/* ボタン */
+.btn {
+  font-size: 16px;
+  padding: 10px 32px;
+}
+
+/* お客様の声 */
+.voice-list {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.voice-card {
+  flex: unset;
+  width: 100%;
+}
+
+/* フッター */
+.footer-inner {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-nav {
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+/* 採用応募フォーム */
+.form-file-row {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-tel-row,
+.form-zip-row {
+  flex-wrap: wrap;
+}
+
+/* お問い合わせフォーム */
+.form-page-title {
+  font-size: 26px;
+}
+
+.form-row {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-input--half {
+  max-width: 100%;
+}
+
+.btn-submit {
+  font-size: 18px;
+  padding: 12px 48px;
+}
+
+/* 採用ヒーロー */
+.recruit-hero {
+  min-height: 200px;
+}
+
+.recruit-hero-inner h1 {
+  font-size: 28px;
+}
+
+/* 中途採用 */
+.job-list {
+  flex-direction: column;
+  gap: 32px;
+}
+
+.job-card {
+  flex: unset;
+  width: 100%;
+}
+
+.job-card img {
+  height: 200px;
+}
+
+/* メンバー紹介 */
+.member-list {
+  grid-template-columns: 1fr;
+}
+
+.member-body img {
+  width: 64px;
+  height: 64px;
+}
+
+/* 会社概要 */
+.company-table th {
+  width: 100px;
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+.company-table td {
+  font-size: 14px;
+  padding: 10px 12px;
+}
+
+/* 沿革 */
+.timeline-year {
+  font-size: 18px;
+}
+
+.timeline-content {
+  font-size: 14px;
+  padding: 10px 14px;
+}
+
+/* 事業所案内 */
+.office-inner {
+  flex-direction: column;
+}
+
+.office-map {
+  min-height: 220px;
+}
+
+.office-map iframe {
+  min-height: 220px;
+}
+
+/* 料金設定 */
+.pricing-list {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pricing-card {
+  flex: unset;
+  width: 100%;
+}
+
+.pricing-support-title {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pricing-support-title h3 {
+  font-size: 22px;
+}
+
+.pricing-support-price {
+  font-size: 17px;
+}
+
+/* 制作の流れ */
+.flow-grid {
+  grid-template-columns: 110px 52px 1fr;
+}
+
+.flow-name {
+  font-size: 15px;
+  padding: 10px 8px 10px 0;
+}
+
+.flow-arrow-inner span {
+  font-size: 11px;
+}
+
+.flow-desc-box {
+  font-size: 13px;
+}
+
+/* CTA */
+.cta-text {
+  font-size: 15px;
+}
