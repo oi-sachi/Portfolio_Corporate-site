@@ -4,11 +4,12 @@
 
 /* ヘッダー */
 .nav {
-  gap: 16px;
+  gap: 8px;
 }
 
 .nav a {
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.03em;
 }
 
 .logo img {
@@ -115,6 +116,10 @@
   font-size: 26px;
 }
 
+.form-privacy-title {
+  word-break: keep-all;
+}
+
 .form-row {
   flex-direction: column;
   gap: 10px;
@@ -198,6 +203,16 @@
   min-height: 220px;
 }
 
+.office-info h3 {
+  font-size: 18px;
+  margin-left: 0;
+}
+
+.office-info p {
+  font-size: 14px;
+  margin-left: 0;
+}
+
 /* 料金設定 */
 .pricing-list {
   flex-direction: column;
@@ -229,7 +244,7 @@
 
 .flow-name {
   font-size: 15px;
-  padding: 10px 8px 10px 0;
+  padding: 10px 8px 10px 8px;
 }
 
 .flow-arrow-inner span {
@@ -238,6 +253,10 @@
 
 .flow-desc-box {
   font-size: 13px;
+}
+
+.flow-milestone {
+  margin-left: calc(-110px - 52px - 16px);
 }
 
 /* CTA */
